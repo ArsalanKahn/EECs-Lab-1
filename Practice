@@ -1,0 +1,32 @@
+color Background = color(300, 240, 0);
+float circleSize = 100;
+
+void setup() 
+{
+  size(1000,700, P2D); //p2d allows the 2d gpu to accelerate
+  background(Background);
+}
+
+void draw()
+{
+  if(mouseButton == LEFT)
+  {
+    circleSize = circleSize + 5;
+    fill(0,100, 0);
+    rectMode(CENTER);
+    
+  }
+  else if(mouseButton == RIGHT)
+  {
+  circleSize = circleSize - 5;
+    fill(100, 0, 0);
+    rectMode(CENTER);
+    
+  }
+  else if(mouseButton == 0)
+  rectMode(CORNER);
+  fill(0,127, 375);
+  stroke(375, 0, 0);
+  line(mouseX, mouseY, pmouseX, pmouseY);
+  rect(mouseX, mouseY, circleSize, circleSize);
+}
